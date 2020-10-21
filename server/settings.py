@@ -150,6 +150,10 @@ MEDIA_URL = '/media/'
 # Custom user
 AUTH_USER_MODEL = 'users.CustomUser'
 
+# login option settings
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
+
 # Crispy Forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
