@@ -241,4 +241,8 @@ Temporary Items
 
 # Django static files
 /staticfiles/
+
+#VSCode
+.vscode/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django,macos
