@@ -239,4 +239,6 @@ Temporary Items
 
 # profiling data
 
+# Django static files
+/staticfiles/
 # End of https://www.toptal.com/developers/gitignore/api/python,django,macos

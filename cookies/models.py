@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import CustomUser
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Location(models.Model):
     name = models.CharField(max_length=128)
@@ -14,6 +15,8 @@ class Location(models.Model):
 class Cookie(models.Model):
     name = models.CharField(max_length=128)
     price = models.DecimalField(decimal_places=2, max_digits=5)
+    image = models.ImageField(upload_to='cookies', default='cookies/default.png')
+    rating = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(5)])
     
     def __str__(self):
         return self.name
