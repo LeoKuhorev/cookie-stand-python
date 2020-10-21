@@ -27,12 +27,19 @@
       rel="stylesheet"
     />
     <!--  Favicon -->
-    <link rel="icon" href="https://img.icons8.com/wired/64/000000/api.png" />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/plasticine/100/000000/cookie.png"
+    />
+
+    <!--  Custom CSS -->
+    <link href={% static 'css/styles.css' %} rel="stylesheet" />
+    <!--  Custom CSS -->
 
     {% block link %} {% endblock link %} {% if title %}
-    <title>Lab 32 - {{ title }}</title>
+    <title>Lab 44 - {{ title }}</title>
     {% else %}
-    <title>Lab 32</title>
+    <title>Lab 44</title>
     {% endif %}
   </head>
 
@@ -47,6 +54,9 @@
       <!-- Page Content -->
       {% block content %} {% endblock content %}
     </main>
+
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
 
     <!-- JQuery -->
     <script
