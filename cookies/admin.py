@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Cookie, Location, Order
+from .models import Cookie, Location
 
 
 class CookieAdmin(admin.ModelAdmin):
@@ -39,11 +39,7 @@ class LocationAdmin(admin.ModelAdmin):
     list_display_links = ('name', 'manager', 'render_min_customers',
                           'render_max_customers', 'render_avg_sale')
 
-class OrderAdmin(admin.ModelAdmin):
-    
-    list_display = ('date_placed', 'get_items')
 
 
 admin.site.register(Cookie, CookieAdmin)
 admin.site.register(Location, LocationAdmin)
-admin.site.register(Order, OrderAdmin)
