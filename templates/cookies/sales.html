@@ -1,10 +1,16 @@
-{% extends '_base.html' %} {% load static %} {% block link %}
+{% extends '_base.html' %} {% load static %}
+
+<!-- Links -->
+{% block link %}
 <link
   rel="stylesheet"
   type="text/css"
   href="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/sc-2.0.2/sp-1.1.1/datatables.min.css"
 />
-{% endblock link %} {% block content %}
+{% endblock link %}
+
+<!-- Content -->
+{% block content %}
 <h1 class="content text-center mb-4">Sales Data</h1>
 
 {% if sales_data %}
@@ -47,10 +53,13 @@
 <h3 class="content">
   No sales data found, go to the <a href="{% url 'home' %}">home</a> page
 </h3>
-{% endif %} {% endblock content%} {% block script %}
+{% endif %} {% endblock content%}
+
+<!-- Scrits -->
+{% block script %}
 <script
   type="text/javascript"
   src="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/sc-2.0.2/sp-1.1.1/datatables.min.js"
 ></script>
-<script type="text/javascript" src="{% static 'js/history.js' %}"></script>
+{% comment %} <script type="text/javascript" src="{% static 'js/table.js' %}"></script> {% endcomment %}
 {% endblock script %}

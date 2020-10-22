@@ -1,6 +1,7 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from .forms import LocationForm
 from .models import Cookie, Location
@@ -50,12 +51,22 @@ def store_edit(request, store_id):
     store = Location.objects.get(pk=store_id)
     user = request.user
     if store.manager == user or user.is_superuser:
-        
-        form = LocationForm(instance=store)
+        if request.method == 'POST':
+            form = LocationForm(request.POST, instance=store)
+            for error in form.errors:
+                messages.error(request, 'Form submission failed, please try again')
+
+            if form.is_valid():
+                form.save()
+                messages.success(request, f'Store {store.name} has been updated')
+                return redirect('sales')
+        else:
+            form = LocationForm(instance=store)
 
         context = {
+            'form': form,
+            'store': store,
             'title': f'Edit {store.name}',
-            'form': form
         }
         return render(request, 'cookies/store_edit.html', context)
 

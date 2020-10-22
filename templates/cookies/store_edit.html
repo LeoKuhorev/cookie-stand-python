@@ -2,6 +2,9 @@
 
 <!-- Content -->
 {% block content %}
+<h1 class="content text-center mb-4">Edit store: {{ store.name }}</h1>
+
+
 <form method="post" class="content text-center">
   {% csrf_token %}
   <fieldset>{{ form|crispy }}</fieldset>

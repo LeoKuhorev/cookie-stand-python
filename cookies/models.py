@@ -35,3 +35,25 @@ class Cookie(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Order(models.Model):
+    customer = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    date_placed = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now=True)
+    
+    @property
+    def get_items(self):
+        return self.orderitem_set.all()
+    
+    def __str__(self):
+        return f'{self.customer} - {self.date_updated}'
+    
+    
+    
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    item = models.ForeignKey(Cookie, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    
+    def __str__(self):
+        return f'{self.item} x {self.quantity}'
