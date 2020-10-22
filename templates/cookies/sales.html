@@ -30,8 +30,8 @@
       {% for store in store_data %}
       <tr>
         <th class="align-middle text-center" scope="row">{{ store.name }}</th>
-        <td class="align-middle text-center">{{ store.min_customers }}</td>
-        <td class="align-middle text-center">{{ store.max_customers }}</td>
+        <td class="align-middle text-center">{{ store.get_min_customers }}</td>
+        <td class="align-middle text-center">{{ store.get_max_customers }}</td>
         <td class="align-middle text-center">{{ store.avg_sale }}</td>
         <td class="align-middle text-center">{{ store.manager.username }}</td>
         {% if user.username == store.manager.username or user.is_superuser %}
@@ -50,7 +50,7 @@
   </table>
 </div>
 
-
+<h1 class="content text-center mb-4">Daily Sales</h1>
 <div class="table-responsive">
   <table id="sales" class="table table-hover white-background">
     <thead>

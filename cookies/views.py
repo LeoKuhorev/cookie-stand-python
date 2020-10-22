@@ -35,7 +35,6 @@ def sales_data(request):
     if user.is_staff:
         store_data = Location.objects.all()
         sales_data = [store.orderdata_set.all() for store in store_data]
-        print(sales_data) 
         context = {
             'user': user,
             'store_data': store_data,
