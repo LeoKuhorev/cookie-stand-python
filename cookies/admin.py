@@ -1,13 +1,13 @@
 from django.contrib import admin
 
-from .models import Cookie, Location
+from .models import Cookie, Location, OrderData
 
 
 class CookieAdmin(admin.ModelAdmin):
     def render_price(self, obj):
         return f'${obj.price}'
     render_price.short_description = 'Price'
-    
+
     def render_rating(self, obj):
         return f'{obj.rating}/5'
     render_rating.short_description = 'Rating'
@@ -40,6 +40,10 @@ class LocationAdmin(admin.ModelAdmin):
                           'render_max_customers', 'render_avg_sale')
 
 
+class OrderDataAdmin(admin.ModelAdmin):
+    list_display = ('store', 'date', 'number_of_customers', 'avg_sale')
+
 
 admin.site.register(Cookie, CookieAdmin)
 admin.site.register(Location, LocationAdmin)
+admin.site.register(OrderData, OrderDataAdmin)

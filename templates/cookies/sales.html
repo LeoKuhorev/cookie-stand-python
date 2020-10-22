@@ -11,11 +11,11 @@
 
 <!-- Content -->
 {% block content %}
-<h1 class="content text-center mb-4">Sales Data</h1>
+<h1 class="content text-center mb-4">Store Data</h1>
 
-{% if sales_data %}
+{% if store_data %}
 <div class="table-responsive">
-  <table id="history" class="table table-hover white-background">
+  <table id="stores" class="table table-hover white-background">
     <thead>
       <tr>
         <th scope="col">Location</th>
@@ -26,8 +26,8 @@
         <th scope="col">Edit</th>
       </tr>
     </thead>
-    <tbody id="table-body">
-      {% for store in sales_data %}
+    <tbody>
+      {% for store in store_data %}
       <tr>
         <th class="align-middle text-center" scope="row">{{ store.name }}</th>
         <td class="align-middle text-center">{{ store.min_customers }}</td>
@@ -49,6 +49,32 @@
     </tbody>
   </table>
 </div>
+
+
+<div class="table-responsive">
+  <table id="sales" class="table table-hover white-background">
+    <thead>
+      <tr>
+        <th scope="col">Location</th>
+        <th scope="col">Date</th>
+        <th scope="col">Number of Customers</th>
+        <th scope="col">Avg Cookies per sale</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      {% for store in sales_data %}
+        {% for day in store %}
+      <tr>
+        <th class="align-middle text-center" scope="row">{{ day.store.name }}</th>
+        <th class="align-middle text-center" scope="row">{{ day.date }}</th>
+        <td class="align-middle text-center">{{ day.number_of_customers }}</td>
+        <td class="align-middle text-center">{{ day.avg_sale }}</td>
+      </tr>
+        {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% else %}
 <h3 class="content">
   No sales data found, go to the <a href="{% url 'home' %}">home</a> page
@@ -61,5 +87,5 @@
   type="text/javascript"
   src="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/sc-2.0.2/sp-1.1.1/datatables.min.js"
 ></script>
-{% comment %} <script type="text/javascript" src="{% static 'js/table.js' %}"></script> {% endcomment %}
+<script type="text/javascript" src="{% static 'js/table.js' %}"></script>
 {% endblock script %}

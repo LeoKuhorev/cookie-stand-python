@@ -4,7 +4,7 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import redirect, render
 
 from .forms import LocationForm
-from .models import Cookie, Location
+from .models import Cookie, Location, OrderData
 
 
 def home(request):
@@ -33,10 +33,12 @@ def sales_data(request):
     user = request.user
 
     if user.is_staff:
-        sales_data = Location.objects.all()
-
+        store_data = Location.objects.all()
+        sales_data = [store.orderdata_set.all() for store in store_data]
+        print(sales_data) 
         context = {
             'user': user,
+            'store_data': store_data,
             'sales_data': sales_data,
             'title': 'Sales'
         }
