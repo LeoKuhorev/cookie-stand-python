@@ -1,0 +1,14 @@
+{% extends '_base.html' %} {% load crispy_forms_tags %}
+
+<!-- Content -->
+{% block content %}
+<h1 class="content text-center mb-4">Edit store: {{ store.name }}</h1>
+
+
+<form method="post" class="content text-center">
+  {% csrf_token %}
+  <fieldset>{{ form|crispy }}</fieldset>
+
+  <button id="submit" type="submit" class="btn btn-mdb-color">Submit</button>
+</form>
+{% endblock content %}

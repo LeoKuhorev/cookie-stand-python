@@ -1,43 +1,44 @@
-{% extends '_base.html' %} {% block content %}
-{% load static %}
+{% extends '_base.html' %} {% block content %} {% load static %}
 
 <div class="container my-5">
   <section>
     <div class="row">
       {% for item in items %}
-        <div class="col-lg-4 col-md-12">
-          <!-- Card -->
-          <div class="card hoverable mb-4">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-6 px-0">
-                  <a>
-                    <img
-                      src="{{item.image.url}}"
-                      class="img-fluid"
-                    />
+      <div class="col-lg-4 col-md-12">
+        <!-- Card -->
+        <div class="card hoverable mb-4">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-6 px-0">
+                <a>
+                  <img src="{{item.image.url}}" class="img-fluid" />
+                </a>
+              </div>
+              <div class="col-6">
+                <a>
+                  <strong>{{ item.name }}</strong>
+                </a>
+                <ul class="rating inline-ul">
+                  {% for star in item.rating %}
+                  <li>
+                    <i class="fas fa-star {{star}}-text"></i>
+                  </li>
+                  {% endfor %}
+                </ul>
+                <h6 class="h6-responsive font-weight-bold dark-grey-text">
+                  <strong>${{ item.price }}</strong>
+                  {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
+                  <a href="#">
+                    <i class="fas fa-cart-plus fa-lg"></i>
                   </a>
-                </div>
-                <div class="col-6">
-                  <a>
-                    <strong>{{ item.name }}</strong>
-                  </a>
-                  <ul class="rating inline-ul">
-                    {% for star in item.rating %}
-                      <li>
-                        <i class="fas fa-star {{star}}-text"></i>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                  <h6 class="h6-responsive font-weight-bold dark-grey-text">
-                    <strong>${{ item.price }}</strong>
-                  </h6>
-                </div>
+                  {% endif %}
+                </h6>
               </div>
             </div>
           </div>
-          <!-- Card -->
         </div>
+        <!-- Card -->
+      </div>
       {% endfor %}
     </div>
   </section>

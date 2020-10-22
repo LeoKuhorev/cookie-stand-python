@@ -1,47 +1,55 @@
 <!--Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light #fafafa">
-  <a class="navbar-brand" href="{% url 'home' %}"><img src="https://img.icons8.com/plasticine/100/000000/cookie.png" width="40" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="{% url 'home' %}"
+    ><img
+      src="https://img.icons8.com/plasticine/100/000000/cookie.png"
+      width="40"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item
-        {% if '/' == request.path %}
-          active
-        {% endif %}
-      ">
-        <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> HOME
+      <li class="nav-item {% if '/' == request.path %} active {% endif %}">
+        <a class="nav-link" href="{% url 'home' %}"
+          ><i class="fas fa-home"></i> HOME
           <span class="sr-only">(current)</span>
         </a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'sales' %}">
-            <i class="far fa-user"></i> SALES
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile' %}">
-            <i class="far fa-user"></i> PROFILE
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">
-            <i class="fas fa-sign-out-alt"></i> LOGOUT
-          </a>
-        </li>
-      {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">
-            <i class="fas fa-sign-in-alt"></i> LOGIN
-          </a>
-        </li>
+      {% if user.is_authenticated %} {% if user.is_staff %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'sales' %}">
+          <i class="far fa-user"></i> SALES
+        </a>
+      </li>
       {% endif %}
-
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile' %}">
+          <i class="far fa-user"></i> PROFILE ({{ user.username }})
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">
+          <i class="fas fa-sign-out-alt"></i> LOGOUT
+        </a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">
+          <i class="fas fa-sign-in-alt"></i> LOGIN
+        </a>
+      </li>
+      {% endif %}
     </ul>
   </div>
 </nav>
