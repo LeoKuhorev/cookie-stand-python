@@ -35,6 +35,15 @@ ALLOWED_HOSTS=localhost,127.0.0.1
 `user/logout/` - logout page, is shown when a user it logged out (login required);  
 `admin/` - site admin page;
 
+## ENV VARS
+`SECRET_KEY=t9s9_g3j3(5ry#j=)ctik)i&(k%!sta*^gfyt5smt*s8o=32z9`
+`DEBUG=True`
+`ALLOWED_HOSTS=127.0.0.1,0.0.0.0,localhost`
+`DB_USER=azjzmpcc`
+`DB_PASS=neEI-JS6iOrYMblJNVH-IZ_T8TWCe_25`
+`DB_HOST=lallah.db.elephantsql.com`
+`DB_PORT=5432`
+
 ## Testing Info
 
 | Email             |  Password  |     Role |
