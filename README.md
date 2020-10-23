@@ -48,6 +48,7 @@ Richard Whitehead
 `user/login/` - login page, allows a user to log in;  
 `user/profile/` - profile page, allows a user to view and edit their profile information (login required);  
 `user/logout/` - logout page, is shown when a user it logged out (login required);  
+`sales/` - sales page, shows the sales data information and historical data for the last two years (login required);
 `admin/` - site admin page;
 
    
@@ -67,10 +68,14 @@ Richard Whitehead
 
 ### Dependency Documentation:
 
-[Python (v. 3.8)](https://docs.python.org/3.8/)  
-[Django (v. 3.1)](https://docs.djangoproject.com/en/3.1/)  
-[Django Crispy Forms (v. 1.9.2)](https://pypi.org/project/django-crispy-forms/)  
-[Django Environ (v. 0.4.5)](https://pypi.org/project/django-environ/)
+python = "^3.8"
+django = "^3.1.2"
+psycopg2-binary = "^2.8.6"
+django-environ = "^0.4.5"
+django-crispy-forms = "^1.9.2"
+pillow = "^8.0.0"
+django-cleanup = "^5.1.0"
+
 
 ### Dev Dependencies:
 
