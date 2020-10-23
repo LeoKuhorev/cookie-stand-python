@@ -17,7 +17,7 @@ use your imagination . . . . . to do????
 ## AUTHORS
 
 [_Leo Kukharau_](https://github.com/LeoKuhorev)  
-[Chuck Li  ](https://github.com/ticochuck)
+[Chuck Li  ](https://github.com/ticochuck)  
 [Richard Whitehead](https://github.com/RichWhitehead)
 
 ## Features:
