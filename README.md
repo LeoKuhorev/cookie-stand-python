@@ -17,7 +17,7 @@ use your imagination . . . . . to do????
 ## AUTHORS
 
 [_Leo Kukharau_](https://github.com/LeoKuhorev)  
-[Chuck Li  ](https://github.com/ticochuck)
+Chuck Li  
 Richard Whitehead
 
 ## GETTING STARTED:
@@ -69,12 +69,12 @@ Richard Whitehead
 ### Dependency Documentation:
 
 python = "^3.8"
-django = "^3.1.2"
-psycopg2-binary = "^2.8.6"
-django-environ = "^0.4.5"
-django-crispy-forms = "^1.9.2"
-pillow = "^8.0.0"
-django-cleanup = "^5.1.0"
+django = "^3.1.2"  
+psycopg2-binary = "^2.8.6"  
+django-environ = "^0.4.5"  
+django-crispy-forms = "^1.9.2"  
+pillow = "^8.0.0"  
+django-cleanup = "^5.1.0"  
 
 
 ### Dev Dependencies:
