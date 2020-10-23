@@ -18,7 +18,18 @@ use your imagination . . . . . to do????
 
 [_Leo Kukharau_](https://github.com/LeoKuhorev)  
 [Chuck Li  ](https://github.com/ticochuck)
-[Richard Whitehead]()
+[Richard Whitehead](https://github.com/RichWhitehead)
+
+## Features:
+- landing page contains items for sale. Items can be added/edited through the admin page. Each item has an image field as well as a price and rating. If no image was provided, the default image will be used; 
+- non-logged in user can only see the list of items for sale;
+- after a user creates an account and logs in they will be able to purchase items (dummy cart);
+- any logged-in user can edit their profile;
+- superuser/administrator can monitor/edit all stores data via the admin page (that is modified and  extended);
+- superuser/administrator can grant to any user manager access and specify what store they will manage;
+- a manager can  see the 'sales' page that shows historical data for the last 2 years as well as the average numbers for each store;
+- a manager can edit only their store data;
+- superuser/administrator can edit any store from the sales page;
 
 ## GETTING STARTED:
 
