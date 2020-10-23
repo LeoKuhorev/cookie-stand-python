@@ -2,13 +2,23 @@
 
 ## Feature Tasks and Requirements
 
-- create Django application from scratch that has a custom user model named CustomUser
-  - Custom user should use email instead of username for signup / login
-  - Application should work with Django Admin
+- Create Salmon Cookies using Python  
+    - Need to implement database  
+    - Admin needs the ability to see sales from all stores. Only the admin can add new stores.  
+- Store managers can see all data but only modify their store data.  
+- Users create an account to purchase cookies online
+- When not logged in, user can only see main page with cookies, costs, and merchandise.  
+- Must use pictures in assets folder. (Can use any additional pictures)
+use your imagination . . . . . to do????  
+
+- Use this data to generate 2 years of data for each store. As new information is generated, update average customers, average cookies sold, and average cookie sales for each store.
+
 
 ## AUTHORS
 
-[_Leo Kukharau_](https://github.com/LeoKuhorev)
+[_Leo Kukharau_](https://github.com/LeoKuhorev)  
+Chuck Li  
+Richard Whitehead
 
 ## GETTING STARTED:
 
